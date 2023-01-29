@@ -15,7 +15,7 @@ module.exports = {
 			user: 'node',
 			host: '212.32.248.106',
 			ref: 'origin/master',
-			repo: 'https://github.com/blender92/taskmaster-react',
+			repo: 'git@github.com:blender92/taskmaster-react.git',
 			path: '/var/www/react/',
 			'pre-deploy-local': '',
 			'post-deploy':
