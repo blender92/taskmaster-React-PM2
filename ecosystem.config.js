@@ -1,12 +1,12 @@
 module.exports = {
 	apps: [
 		{
-			script: 'index.html',
-			watch: '.',
-		},
-		{
-			script: './service-worker/',
-			watch: ['./service-worker'],
+			name: 'my_react_app',
+			script: 'npm',
+			args: 'run start:production',
+			env_production: {
+				NODE_ENV: 'production',
+			},
 		},
 	],
 
