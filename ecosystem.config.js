@@ -3,7 +3,7 @@ module.exports = {
 		{
 			name: 'my_react_app',
 			script: 'npm',
-			args: 'run start:production',
+			args: 'run start',
 			env_production: {
 				NODE_ENV: 'production',
 			},
