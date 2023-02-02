@@ -2,6 +2,7 @@ import mouse;
 import keyboard
 from datetime import datetime 
 from time import sleep
+import random
 import os
 
 
@@ -49,16 +50,31 @@ def parseMouseEvent(event):
 #   duration=0,
 #   steps_per_second=120.0)
 
+def sendKey(keys:str):
+    keyboard.send(keys)
+
 
 def mvMouse(mh:mouse, x, y, speed):
     mh.move(x,y,False,int(100/speed))
 
+def wait( duration ):
+    randomNumber = random.random.randInt(10,30)
+    sleep((randomNumber + duration)/1000)
+    
+KEY_WALL = 'z'
+KEY_STAIRS = 'x'
+KEY_BUILDEXIT = 'q'
+KEY_FLOOR = 'c'
+
 def macroWall():
     global mh;
-
     eventLog("macroWall")
-    # press wallbtn
-    # moveDn 2000
+
+    sendKey(KEY_WALL)
+    wait(50)
+    mvMouse(mh, 0,1000,50)
+
+    #moveDn 2000
     # wait 10 ms
     # moveUp 100
     # wait 50ms
@@ -124,7 +140,7 @@ if __name__ == "__main__":
         printHndl()
 
         sleep(FRAMETIME)
-        cls()
+        #cls()
 
     
     kb.set_normal_term()
